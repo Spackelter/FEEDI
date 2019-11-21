@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreferencesPointToNorthActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/tv_title_ptn_vibrationCycleOnTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:text="Vibration cycle on time (s): "
+        app:layout_constraintEnd_toStartOf="@+id/tv_ptn_vibrationCycleOnTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ptn_vibrationCycleOnTime"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:text="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_vibrationCycleOnTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sb_ptn_vibrationCycleOnTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="19"
+        app:layout_constraintEnd_toEndOf="@+id/tv_title_ptn_vibrationCycleOnTime"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_vibrationCycleOnTime"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_ptn_vibrationCycleOnTime" />
+
+    <TextView
+        android:id="@+id/tv_title_ptn_vibrationCycleOffTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:text="Vibration cycle off time (s):"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ptn_vibrationCycleOffTime"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_vibrationCycleOnTime" />
+
+    <TextView
+        android:id="@+id/tv_ptn_vibrationCycleOffTime"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:text="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_vibrationCycleOffTime"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_vibrationCycleOnTime" />
+
+    <SeekBar
+        android:id="@+id/sb_ptn_vibrationCycleOffTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:max="20"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ptn_vibrationCycleTotalTime"
+        app:layout_constraintEnd_toEndOf="@+id/tv_title_ptn_vibrationCycleOffTime"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_vibrationCycleOffTime"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ptn_vibrationCycleOffTime" />
+
+    <TextView
+        android:id="@+id/tv_title_ptn_vibrationCycleTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="51dp"
+        android:text="Vibration cycle total time (s):"
+        app:layout_constraintBottom_toTopOf="@+id/sb_ptn_vibrationCycleTotalTime"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ptn_vibrationCycleTotalTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_vibrationCycleOffTime" />
+
+    <TextView
+        android:id="@+id/tv_ptn_vibrationCycleTotalTime"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="4dp"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/sb_ptn_vibrationCycleTotalTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_vibrationCycleTotalTime" />
+
+    <SeekBar
+        android:id="@+id/sb_ptn_vibrationCycleTotalTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="25"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_ptn_time_btw_vibrations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_ptn_vibrationCycleTotalTime" />
+
+    <TextView
+        android:id="@+id/tv_title_ptn_time_btw_vibrations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="6dp"
+        android:text="Time between\nvibration cycles (s):"
+        app:layout_constraintBottom_toTopOf="@+id/sb_ptn_time_btw_vibration_cycles"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ptn_time_btw_vibrationCycles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_vibrationCycleTotalTime" />
+
+    <TextView
+        android:id="@+id/tv_ptn_time_btw_vibrationCycles"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="4dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/sb_ptn_time_btw_vibration_cycles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_time_btw_vibrations" />
+
+    <SeekBar
+        android:id="@+id/sb_ptn_time_btw_vibration_cycles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_ptn_time_btw_vibrations" />
+
+    <Button
+        android:id="@+id/btn_ptn_Reset_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Reset"
+        android:onClick="onClickPtnResetPreferences"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_time_btw_vibration_cycles" />
+
+    <Button
+        android:id="@+id/btn_ptn_Save_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Save Preferences"
+        android:onClick="onClickPtnSavePreferences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_ptn_time_btw_vibration_cycles" />
+
+</android.support.constraint.ConstraintLayout>

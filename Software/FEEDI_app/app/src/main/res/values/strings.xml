@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FEEDI_app</string>
+
+    <string-array name="Options_SelectDestination">
+        <item>Address</item>
+        <item>Coordinates</item>
+    </string-array>
+
+    <string-array name="Options_PointNavigation_Views">
+        <item>Compass</item>
+        <item>Map</item>
+    </string-array>
+</resources>

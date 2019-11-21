@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PointToNorthActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <TextView
+        android:id="@+id/tv_connection_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="Not connected"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_ptn_compass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_ptn_compass"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title_ptn_orientation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_connection_state"
+        app:srcCompat="@drawable/compass" />
+
+    <TextView
+        android:id="@+id/tv_title_ptn_orientation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="19dp"
+        android:text="Orientation: "
+        app:layout_constraintBottom_toTopOf="@+id/btn_ptn_stop"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ptn_Orientation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_ptn_compass" />
+
+    <TextView
+        android:id="@+id/tv_ptn_Orientation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_title_ptn_orientation"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ptn_stop"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_ptn_orientation" />
+
+    <Button
+        android:id="@+id/btn_ptn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClickptnStop"
+        android:text="Stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_ptn_Orientation"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_ptn_orientation" />
+</android.support.constraint.ConstraintLayout>

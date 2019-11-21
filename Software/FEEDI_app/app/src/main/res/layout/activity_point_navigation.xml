@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cl_compassLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PointNavigationActivity"
+        tools:layout_editor_absoluteY="81dp">
+
+        <TextView
+            android:id="@+id/tv_connection_state"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:text="Not connected"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_GPS_position_found"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:text="GPS Position Not Found"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_connection_state" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_pn_ComassAndDestination"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_GPS_position_found"
+            android:layout_marginTop="2dp"
+            tools:context=".MainActivity">
+
+            <ImageView
+                android:id="@+id/img_pn_DestinationDisc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/target_location_arrow_disc" />
+
+            <ImageView
+                android:id="@+id/img_pn_Compass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/compass_with_points_for_size" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title_pn_distance_to_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distance to target (km): "
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout_pn_ComassAndDestination"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayout_pn_ComassAndDestination"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="25dp" />
+
+        <TextView
+            android:id="@+id/tv_pn_distance_to_target"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_pn_distance_to_target"
+            app:layout_constraintStart_toEndOf="@+id/tv_title_pn_distance_to_target"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:id="@+id/tv_title_pn_orientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orientation (°): "
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_distance_to_target"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_pn_distance_to_target"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_pn_orientation"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_pn_orientation"
+            app:layout_constraintStart_toStartOf="@+id/tv_pn_distance_to_target" />
+
+        <TextView
+            android:id="@+id/tv_title_pn_Destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination (°): "
+            app:layout_constraintStart_toStartOf="@+id/tv_title_pn_orientation"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_orientation"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_pn_Destination"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_pn_Destination"
+            app:layout_constraintStart_toStartOf="@+id/tv_pn_orientation"/>
+
+        <Button
+            android:id="@+id/btn_pn_switchToMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map View"
+            android:onClick="onClickPnMapView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btn_pn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:onClick="onClickPnStop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rl_mapLayout"
+        android:orientation="vertical"
+        android:layout_width ="match_parent"
+        android:layout_height ="match_parent"
+        tools:layout_editor_absoluteY="81dp">
+
+        <org.osmdroid.views.MapView android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"/>
+
+        <Button
+            android:id="@+id/btn_pnSwitchToCompass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compass View"
+            android:onClick="onClickPnCompassView"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btn_pn_map_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:onClick="onClickPnStop"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

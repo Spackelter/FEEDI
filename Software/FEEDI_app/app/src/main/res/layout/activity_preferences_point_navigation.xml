@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreferencesPointNavigationActivity">
+
+    <TextView
+        android:id="@+id/tv_title_pn_vibration_cycle_on_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:text="Vibration cycle on time (s): "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pn_vibration_cycle_on_time"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="0.1"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_pn_vibration_cycle_on_time"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_pn_vibration_cycle_on_time" />
+
+    <SeekBar
+        android:id="@+id/sb_pn_vibration_cycle_on_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_vibration_cycle_on_time" />
+
+    <TextView
+        android:id="@+id/tv_title_pn_vibration_cycle_off_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Vibration cycle off time (s): "
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pn_vibration_cycle_on_time"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pn_vibration_cycle_on_time" />
+
+    <TextView
+        android:id="@+id/tv_pn_vibration_cycle_off_time"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_pn_vibration_cycle_on_time"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_pn_vibration_cycle_off_time" />
+
+    <SeekBar
+        android:id="@+id/sb_pn_vibration_cycle_off_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_vibration_cycle_off_time" />
+
+    <TextView
+        android:id="@+id/tv_title_pn_vibration_cycle_total_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Vibration cycle total time (s): "
+        app:layout_constraintTop_toBottomOf="@+id/sb_pn_vibration_cycle_off_time"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pn_vibration_cycle_on_time" />
+
+    <TextView
+        android:id="@+id/tv_pn_vibration_cycle_total_time"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pn_vibration_cycle_total_time"
+        app:layout_constraintStart_toStartOf="@+id/tv_pn_vibration_cycle_off_time" />
+
+    <SeekBar
+        android:id="@+id/sb_pn_vibration_cycle_total_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_vibration_cycle_total_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_pn_time_btw_vibCycles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time between \nvibration cycles (s): "
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pn_vibration_cycle_total_time"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pn_vibration_cycle_total_time" />
+
+    <TextView
+        android:id="@+id/tv_pn_time_btw_vibCycles"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pn_time_btw_vibCycles"
+        app:layout_constraintStart_toStartOf="@+id/tv_pn_vibration_cycle_total_time" />
+
+    <SeekBar
+        android:id="@+id/sb_pn_time_btw_vibCycles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pn_time_btw_vibCycles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_pn_reset_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Reset"
+        android:onClick="onClickResetPnPreferences"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pn_time_btw_vibCycles"/>
+
+
+    <Button
+        android:id="@+id/btn_pn_save_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Save Preferences"
+        android:onClick="onClickSavePnPreferences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pn_time_btw_vibCycles" />
+</android.support.constraint.ConstraintLayout>

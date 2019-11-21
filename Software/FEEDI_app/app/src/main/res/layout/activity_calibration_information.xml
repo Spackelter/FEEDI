@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalibrationInformationActivity">
+
+    <TextView
+        android:id="@+id/tv_calibrationExplanation"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        android:text="Before using FEEDI, it is recommended to calibrate its built-in BNO055 until all calibration values are 1 or higher.\n\n
+Gyroscope:\n
+         The gyroscope can be calibrated by putting the device in a stable position.\n\n
+Accelerometer:\n
+         The accelerometer can be calibrated by rotating the device in 45° steps around one axis.\n\n
+Magnetometer:\n
+         The magnetometer can be calibrated by moving the device around in the tajectory of a figure 8.\n\n
+System:\n
+         The system calibration comes along with the other calibrations.\n\n
+Source: https://www.youtube.com/watch?v=Bw0WuAyGsnY (April 5th, 2019)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

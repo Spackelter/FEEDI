@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PointNavigationMenuActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/tv_connection_state"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="Not connected"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_GPS_position_found"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:text="GPS Position Not Found"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_connection_state" />
+
+    <TextView
+        android:id="@+id/tv_title_pnm_NavigateTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Navigate to: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GPS_position_found" />
+
+    <Spinner
+        android:id="@+id/spinner_pnm_SelectDestOptions"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:entries="@array/Options_SelectDestination"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_NavigateTo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pnm_NavigateTo" />
+
+    <TextView
+        android:id="@+id/tv_title_pnm_EnterBelow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter address below: "
+        android:visibility="visible"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/spinner_pnm_SelectDestOptions"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_pnm_SelectDestOptions" />
+
+    <EditText
+        android:id="@+id/ev_pnm_Address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:text="Engesserstraße 5, 76131 Karlsruhe, Deutschland"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pnm_EnterBelow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_pnm_latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude: "
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pnm_EnterBelow"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_EnterBelow" />
+
+    <TextView
+        android:id="@+id/tv_title_pnm_longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:text="Longitude: "
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pnm_EnterBelow"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_EnterBelow" />
+
+    <EditText
+        android:id="@+id/ev_pnm_latitude"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:text="49.012650"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pnm_latitude"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_EnterBelow" />
+
+    <EditText
+        android:id="@+id/ev_pnm_longitude"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="8.409400"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ev_pnm_latitude"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_longitude" />
+
+    <TextView
+        android:id="@+id/tv_title_pnm_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select view: "
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/ev_pnm_latitude"
+        app:layout_constraintStart_toStartOf="@+id/ev_pnm_latitude" />
+
+    <Spinner
+        android:id="@+id/spinner_pnm_SelectView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/Options_PointNavigation_Views"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pnm_View"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_pnm_View" />
+
+    <Button
+        android:id="@+id/btn_pnm_startNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Navigation"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="onClickStartPointNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_pnm_SelectView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
